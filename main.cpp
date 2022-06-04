@@ -49,6 +49,7 @@ int main() {
 
     UsersVectorShared s_users;
     auto s_user = make_shared<User>(User("Stig"));
+    weak_ptr<User> w_user = s_user;
     shared_ptr<User>* p_user = &s_user; // pointer to shared_ptr
     shared_ptr<User>& r_user = s_user;  // reference to shared_ptr
 
@@ -103,12 +104,23 @@ int main() {
     addUsers(s_users, 5000);
 
     auto changeUser {
-            [s_user]() {
-                s_user->name = "Anton";
-                cout << "use count: " << s_user.use_count() << endl;
-                cout << "lambda username: " << s_user->getName() << endl;
+            [w_user]() {
+                auto user = w_user.lock();
+                if (user) {
+                    user->name = "Anton";
+                    cout << "use count: " << w_user.use_count() << endl;
+                    cout << "lambda username: " << user->getName() << endl;
+                }
             }
     };
+
+//    auto changeUser {
+//            [s_user]() {
+//                s_user->name = "Anton";
+//                cout << "use count: " << s_user.use_count() << endl;
+//                cout << "lambda username: " << s_user->getName() << endl;
+//            }
+//    };
 
     changeUser();
     cout << "username: " << s_user->getName() << endl;
