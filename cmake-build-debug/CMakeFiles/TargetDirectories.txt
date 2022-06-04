@@ -1,0 +1,3 @@
+/Users/anton/Code/Cpp23/cmake-build-debug/CMakeFiles/Cpp23.dir
+/Users/anton/Code/Cpp23/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/anton/Code/Cpp23/cmake-build-debug/CMakeFiles/rebuild_cache.dir

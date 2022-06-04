@@ -1,0 +1,4 @@
+"/Users/anton/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=/Users/anton/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/221.5787.29/CLion.app/Contents/bin/ninja/mac/ninja" -G Ninja -S /Users/anton/Code/Cpp23 -B /Users/anton/Code/Cpp23/cmake-build-debug
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/anton/Code/Cpp23/cmake-build-debug
