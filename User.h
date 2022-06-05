@@ -11,8 +11,8 @@ class User {
 public:
     std::string name;
 
-    User(const std::string &name);
-    std::string getName();
+    explicit User(std::string name);
+    [[nodiscard]] std::string getName() const;
 };
 
 

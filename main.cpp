@@ -1,4 +1,9 @@
+//
+// Created by Anton Petrov on 04.06.2022.
+//
+
 #include <iostream>
+#include <utility>
 #include "vector"
 
 #include "User.h"
@@ -14,12 +19,12 @@ shared_ptr<User> getUser(UsersVectorShared userVector, int index) {
 
 void changeUserName(shared_ptr<User> user, string newName) {
     cout << "use count: " << user.use_count() << endl;
-    user->name = newName;
+    user->name = std::move(newName);
 }
 
 void changeRefUserName(shared_ptr<User> &user, string newName) {
     cout << "use count: " << user.use_count() << endl;
-    user->name = newName;
+    user->name = std::move(newName);
 }
 
 void addUsers(UsersVectorShared& v, uint count) {

@@ -4,8 +4,10 @@
 
 #include "User.h"
 
-User::User(const std::string &name) : name(name) {}
+#include <utility>
 
-std::string User::getName() {
+User::User(std::string name) : name(std::move(name)) {}
+
+std::string User::getName() const {
     return this->name;
 }
